@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.mov-post{
+  height: 500px;
+  width: 340px;
+  object-fit: cover;
+}
+
+.mov-spec{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.mov-cont{
+  width: 340px;
+
+}
+
+.mov-name{
+  font-size: 24px;
+  margin: 8px 0px;
+  gap: 10px;
+  padding: 20px;
+  
+}
+
+body{
+  margin:24px;
+}
+
+.mov-align{
+  display: flex;
+  gap: 24px;
+  justify-content: space-evenly;
+}
+
+.counter-cont{
+  display:flex;
+  gap:10px;
+}
+
+.add-movie{
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}

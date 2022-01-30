@@ -1,0 +1,110 @@
+1.document:gives you the entire document or current page
+2.document.all=>It shows all HTML collection 
+
+3.document.URL=>It gives us current path or url of that page
+
+Javascript dom selectors:
+Javascript dom selectors:
+1.getElementById()=>Its a unique way to  get the access to HTML element in DOM tree
+
+Returns the element having that given id .
+
+
+//1.select id:
+let element=document.getElementByid("idname");
+
+
+2.Get hold of html elements
+let htmlhold=element.innerHTML;
+
+
+3.//Get the text of element
+
+
+3.Printing the text 
+let text=htmlhold.innerText;
+console.log(htmlhold);// get the text with complete html tag
+console.log(text);//only text
+
+
+4.Set the text 
+htmhold.innerHTML="Your text here"
+
+//Set text another element
+
+let newelement=document.getElementByid("id")
+newElement.innerHTML=htmlhold.innerHTML
+
+
+//styles=>
+htmlhold.style.property="Value";
+
+
+
+
+// getElementByClassName()=>It is used to select all the elements having specified class name and
+// It returns an array of elements with the class name
+// 1.select the element with class name
+let listitem = document.getElementByClassName("list");
+console.log(listitem);
+// 2.get the text of 0th element
+let firstiteminthelist = listitem[0].innerHTML;
+// 3.set the text of last element
+let lastitem = listitem.length - 1;
+// console.log(lastitem);
+listitem[lastitem].style.property = "value";
+
+// 4.Highlight all items in the list
+//  using loop concept
+
+for (let i = 0; i < listitem.length; i++) {
+  listitem[lastitem].style.property = "value";
+}
+
+
+
+
+//Get element By Tagname=>
+// 1.select al the Li element with tag name
+// 2.get all the li tags or element in tha page
+// 3.get the text of the 0th index
+// 4.set the text of the last element
+// 5.high light all the li element using loop
+
+
+
+//Selecting element using css selectors
+// querySelectorAll()=>its a poweful way to select html elements in a document
+// It gives us an array or list of the elements that mataches the specified selector
+
+// 1.select ul=>li elements
+
+let ullielements = document.querySelectorAll("ul li");
+console.log(ullielements);
+
+//select ul li having  items in the list
+
+let ulliitemelements = document.querySelectorAll("ul li.listitem");
+console.log(lliitemelements);
+// 2.set the color of the last li element
+
+ullielements[ullielements.length - 1].style.color = "Red";
+
+// 3.set the text of the last li element
+
+ullielements[ullielements.length - 1].innerHTML = "You text here ";
+
+
+// SetAttribute()=>if attiribute already exist , it will update attribute value else it set a new attribute value
+// with name and value
+
+// 1.select elmement with id
+// 1.element
+// 2.buuton hold
+// 3.linktext
+// 2.set attribute classname 'btn'
+// 3.set attribute as diasabled
+// 4.set empty attribute so that it removes existing attribute value
+
+
+

@@ -1,0 +1,43 @@
+//for clearing the values 
+function clr()
+{
+    document.getElementById("inpbox").value = "";
+}
+
+
+function insert(val)
+{
+     document.getElementById("inpbox").value+=val;
+}
+
+
+function equal()
+{
+     let x = document.getElementById("inpbox").value;
+     let y = eval(x);
+     document.getElementById("inpbox").value = y;
+}
+
+/* Here, we create a backspace() function to remove the number at the end of the numeric series in textview. */
+function backspace()
+{
+var exp = document.getElementById("inpbox").value;
+document.getElementById("inpbox").value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
+}
+
+
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57)) {
+            alert("Please Enter Only Numbers");
+            return false;           
+    }
+    else if (charCode == 61){
+        equal();
+    }
+    
+    //return true; 
+
+}
+ 
