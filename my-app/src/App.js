@@ -1,35 +1,57 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+
+
+const API ="http://localhost:9000";
 
 function App() {
   return (
     <div className="App">
       <h1>Receipe App</h1>
-     <Card 
-     img="https://www.cubesnjuliennes.com/wp-content/uploads/2020/01/Chicken-Biryani.jpg"
-     title="Chicken briyani"/> 
-     <Card 
-     img="https://www.cubesnjuliennes.com/wp-content/uploads/2019/10/Tandoori-Chicken.jpg"
-     title="Chicken Tandoori"/> 
-     <Card 
-     img="https://www.cubesnjuliennes.com/wp-content/uploads/2020/01/Chicken-Biryani.jpg"
-     title="Chicken Pulao"/> 
+      <ReceipeList />
     </div>
-  );
+  ); 
 }
 
-function Card(props) {
-  return (
-    <div className="card">
-      <div className ="card1">
-         <img src ={props.img} />
-         <h2 className='cardTitle'> {props.title} </h2>
+function ReceipeList(){
 
-      </div>
+const [receipe,setReceipe] = useState([]);
+useEffect(() => {
+  fetch(`${API}/recipes`)
+  .then(data =>data.json())
+  .then((receipe) => setReceipe(receipe)); 
+},[]);
+
+return( <div className="receipe-list">
+ 
+  {receipe.map(({name,pic,_id}) => (
+    <Recipe key={_id} name={name} pic={pic}/>
+  ))}
+  </div>
+ )
+}
+
+function Recipe({name,pic}){
+  return <div className="receipe-container">
+    <img src={pic} alt="receipe pic" className="receipe-picture"/>
+    <p className="receipe-name">{name}</p>
+
+  </div>
+}
+
+// function Card(props) {
+//   return (
+//     <div className="card">
+//       <div className ="card1">
+//          <img src ={props.img} />
+//          <h2 className='cardTitle'> {props.title} </h2>
+
+//       </div>
       
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 
 export default App;
